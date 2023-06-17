@@ -15,6 +15,7 @@ const Sidebar = () => {
       maxWidth={sidebar.isExpand ? '250px' : '70px'}
       sx={{
         height: '100vh',
+        boxShadow: '2px 0px 6px -5px #b9b9b9',
       }}
     >
       {routes.map((item, idx) => (

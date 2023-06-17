@@ -1,25 +1,41 @@
-import { Box, Button } from '@mui/material'
+import { Avatar, Box, Button, IconButton, Menu, MenuItem } from '@mui/material'
 import React from 'react'
-import { LogoWrapper } from './elements'
+import { DotNotif, LogoWrapper, NavbarContent } from './elements'
 import MenuIcon from '@mui/icons-material/Menu'
 import { useAppDispatch, useAppSelector } from '../../../features/store/store'
 import { setExpanded } from '../../../features/store/reducers/sidebar'
+import Typography from '../../atoms/Typography/Typography'
+import ThemaSwitch from '../../atoms/Switch/ThemaSwitch'
+import NotificationsIcon from '@mui/icons-material/Notifications'
+
+const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
 const Navbar = () => {
   const sidebar = useAppSelector((state) => state.sidebar)
   const dispatch = useAppDispatch()
-  
+  const [anchorElUser, setAnchorElUser] = React.useState(null)
+
+  const handleOpenUserMenu = (event) => {
+    setAnchorElUser(event.currentTarget)
+  }
+
+  const handleCloseUserMenu = () => {
+    setAnchorElUser(null)
+  }
+
   return (
     <Box
       sx={{
-        backgroundColor: 'pink',
         height: '60px',
         width: '100%',
         display: 'flex',
+        borderBottom: '.2px solid #cdcdcd',
       }}
     >
-      <LogoWrapper maxWidth={sidebar.isExpand ? '250px' : '70px'}>ini logo</LogoWrapper>
-      <Box display={'flex'}>
+      <LogoWrapper maxWidth={sidebar.isExpand ? '250px' : '70px'}>
+        <Typography variant="body1">Logo</Typography>
+      </LogoWrapper>
+      <NavbarContent>
         <Button
           disableRipple
           onClick={() => {
@@ -28,7 +44,59 @@ const Navbar = () => {
         >
           <MenuIcon />
         </Button>
-      </Box>
+        <Box
+          width={'100%'}
+          sx={{
+            display: 'flex',
+            justifyContent: 'flex-end',
+          }}
+        >
+          <Box mr={2} display={'flex'} alignItems={'center'}>
+            <ThemaSwitch />
+          </Box>
+          <Box mr={1} position={'relative'}>
+            <DotNotif>2</DotNotif>
+            <IconButton>
+              <NotificationsIcon />
+            </IconButton>
+          </Box>
+          <Box sx={{ flexGrow: 0 }}>
+            <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
+            </IconButton>
+
+            <Menu
+              id="menu-appbar"
+              anchorEl={anchorElUser}
+              anchorOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              keepMounted
+              transformOrigin={{
+                vertical: 'top',
+                horizontal: 'right',
+              }}
+              open={Boolean(anchorElUser)}
+              onClose={handleCloseUserMenu}
+              sx={{ mt: '45px' }}
+            >
+              {settings.map((setting) => (
+                <MenuItem
+                  key={setting}
+                  onClick={handleCloseUserMenu}
+                  sx={{
+                    minWidth: '200px',
+                    padding: '10px',
+                  }}
+                >
+                  <Typography textAlign="center">{setting}</Typography>
+                </MenuItem>
+              ))}
+            </Menu>
+          </Box>
+        </Box>
+      </NavbarContent>
     </Box>
   )
 }

@@ -2,10 +2,12 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit'
 import { useDispatch, useSelector } from 'react-redux'
 import { testReducer } from './reducers/testReducer'
 import { sidebarReducer } from './reducers/sidebar'
+import { themeReducer } from './reducers/themeReducer'
 // import { setupListeners } from '@reduxjs/toolkit/query'
 
 export const reducer = combineReducers({
   test: testReducer,
+  theme: themeReducer,
   sidebar: sidebarReducer,
 })
 

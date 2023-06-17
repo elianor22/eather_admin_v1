@@ -1,34 +1,22 @@
 import React from 'react'
 
-import Navbar from '../components/organims/navbar/Navbar'
-import styled from '@emotion/styled'
-import { Box } from '@mui/material'
-import MainContent from '../components/layouts/MainContent'
-import Sidebar from '../components/layouts/sidebar/Sidebar'
+import { CacheProvider } from '@emotion/react'
+import createEmotionCache from '../components/ultilities/createEmotionChace'
+import { CssBaseline, ThemeProvider } from '@mui/material'
+import AppComponents from './components/AppComponents'
+import { useConsumTheme } from '../components/ultilities/thema/useCustomTheme'
 
-const MainWrapper = styled(Box)(() => ({
-  display: 'flex',
-  width: '100%',
-  minHeight: '100vh',
-  flexDirection: 'column',
-}))
+const clientSideEmotion = createEmotionCache()
 
 const AppContainer = () => {
+  const theme = useConsumTheme()
   return (
-    <MainWrapper>
-      <Navbar />
-
-      <Box
-        sx={{
-          display: 'flex',
-          width: '100%',
-          flexDirection: 'row',
-        }}
-      >
-        <Sidebar />
-        <MainContent />
-      </Box>
-    </MainWrapper>
+    <CacheProvider value={clientSideEmotion}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <AppComponents />
+      </ThemeProvider>
+    </CacheProvider>
   )
 }
 

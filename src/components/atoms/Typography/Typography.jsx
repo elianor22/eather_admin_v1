@@ -6,14 +6,20 @@ export const typoType = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2']
 
 const Typography = ({ children, variant = 'body1', fontSize, fontWeight, color, sx }) => {
   return (
-    <MUITypography variant={variant} fontSize={fontSize} fontWeight={fontWeight} color={color} sx={{ ...sx }}>
+    <MUITypography
+      variant={variant}
+      fontSize={fontSize}
+      fontWeight={fontWeight}
+      color={color}
+      sx={{ ...sx }}
+    >
       {children}
     </MUITypography>
   )
 }
 
 Typography.propTypes = {
-  variant: PropTypes.oneOf(typoType),
+  variant: PropTypes.oneOf(typoType, 'body1'),
   fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   fontWeight: PropTypes.number,
   color: PropTypes.string,
