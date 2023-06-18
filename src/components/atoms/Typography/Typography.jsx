@@ -2,9 +2,9 @@ import { Typography as MUITypography } from '@mui/material'
 import PropTypes from 'prop-types'
 import React from 'react'
 
-export const typoType = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2']
+export const typoTypes = ['h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'body1', 'body2']
 
-const Typography = ({ children, variant = 'body1', fontSize, fontWeight, color, sx }) => {
+const Typography = ({ children, variant = 'body1', fontSize, fontWeight, color, sx, ...props }) => {
   return (
     <MUITypography
       variant={variant}
@@ -12,6 +12,7 @@ const Typography = ({ children, variant = 'body1', fontSize, fontWeight, color, 
       fontWeight={fontWeight}
       color={color}
       sx={{ ...sx }}
+      {...props}
     >
       {children}
     </MUITypography>
@@ -19,7 +20,7 @@ const Typography = ({ children, variant = 'body1', fontSize, fontWeight, color, 
 }
 
 Typography.propTypes = {
-  variant: PropTypes.oneOf(typoType, 'body1'),
+  variant: PropTypes.oneOf(typoTypes, 'body1'),
   fontSize: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
   fontWeight: PropTypes.number,
   color: PropTypes.string,
