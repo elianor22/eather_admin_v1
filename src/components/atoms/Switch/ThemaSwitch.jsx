@@ -10,9 +10,7 @@ const ThemaSwitch = () => {
   const handleThemeChange = () => {
     dispatch(toggleTheme())
   }
-  return (
-    <MaterialUISwitch checked={theme === 'light' ? true : false} onChange={handleThemeChange} />
-  )
+  return <MaterialUISwitch checked={theme === 'light' ? true : false} onChange={handleThemeChange} />
 }
 
 export default ThemaSwitch

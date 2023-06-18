@@ -2,9 +2,12 @@ export const ColorProps = {
   color: {
     light: '#622AFE',
   },
+  bgContent: {
+    light: '#f3f3f3',
+  },
   'typo.1': {
-    dark: '#EFEFEF',
-    light: '#4C5052',
+    dark: '#622AFE',
+    light: '#622AFE',
   },
   'typo.2': {
     dark: '#FFFFFF',
@@ -16,7 +19,7 @@ export const ColorProps = {
   },
   'primary.1': {
     dark: '#101829',
-    light: '#fafafa',
+    light: '#f3f3f3',
   },
   'primary.2': {
     dark: '#C400FF',
@@ -65,5 +68,10 @@ export const ColorProps = {
   white: {
     dark: '#fff',
     light: '#fff',
+  },
+  sidebar: { active: '#622AFE', hover: '#EFEAFF' },
+  card: {
+    light: '#FFFFFF',
+    dark: '#04122f',
   },
 }

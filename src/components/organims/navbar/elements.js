@@ -1,6 +1,6 @@
 import styled from '@emotion/styled'
 import { Box } from '@mui/material'
-import { ColorProps } from '../../ultilities/thema/colors'
+import { ColorProps } from '../../../utils/thema/colors'
 
 export const LogoWrapper = styled(Box)(({ maxWidth }) => {
   return {
@@ -8,6 +8,7 @@ export const LogoWrapper = styled(Box)(({ maxWidth }) => {
     display: 'flex',
     justifyContent: 'center',
     alignItems: 'center',
+    transition: 'ease-out .3s',
     maxWidth,
   }
 })

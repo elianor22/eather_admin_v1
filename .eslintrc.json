@@ -5,7 +5,9 @@
     ],
     "plugins": [
         "react",
-        "react-hooks"
+        "react-hooks",
+        "eslint-plugin-prettier",
+        "prettier"
     ],
     "parserOptions": {
         "ecmaVersion": 2021,
