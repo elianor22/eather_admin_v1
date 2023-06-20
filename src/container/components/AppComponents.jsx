@@ -1,13 +1,11 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import styled from '@emotion/styled'
-// import { RouterProvider } from 'react-router-dom'
 import { Route, Routes } from 'react-router-dom'
 import Sidebar from '../../layouts/sidebar/Sidebar'
 import MainContent from '../../layouts/MainContent'
 import { routes } from '../../routes/routes'
 import Navbar from '../../components/organims/Navbar'
-// import { useRouter } from '../../routes/useRouter'
 
 const MainWrapper = styled(Box)(() => ({
   display: 'flex',
