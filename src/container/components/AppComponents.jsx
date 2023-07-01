@@ -4,8 +4,8 @@ import styled from '@emotion/styled'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../../layouts/sidebar/Sidebar'
 import MainContent from '../../layouts/MainContent'
-import Navbar from '../../components/organisms/Navbar'
 import '../../assets/styles/globalStyles.scss'
+import Navbar from '../../components/organisms/Navbar'
 
 const MainWrapper = styled(Box)(() => ({
   display: 'flex',
