@@ -2,6 +2,7 @@ import { createSlice } from '@reduxjs/toolkit'
 
 const initialState = {
   isExpand: true,
+  isOpenSidebar: false,
 }
 
 const sidebarSlice = createSlice({
@@ -12,10 +13,14 @@ const sidebarSlice = createSlice({
       ...state,
       isExpand: action.payload,
     }),
+    setIsOpenSidebar: (state, action) => ({
+      ...state,
+      isOpenSidebar: action.payload,
+    }),
   },
 })
 
-export const { setExpanded } = sidebarSlice.actions
+export const { setExpanded, setIsOpenSidebar } = sidebarSlice.actions
 export const sidebar = (state) => state.sidebar
 
 export const sidebarReducer = sidebarSlice.reducer

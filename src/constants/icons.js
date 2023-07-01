@@ -1,1 +1,21 @@
-export const iconsType = ['dashboard', 'card', 'table']
+export const iconSize = ['small', 'medium', 'large']
+export const iconsVariants = [
+  'dashboard',
+  'card',
+  'table',
+  'star',
+  'play',
+  'pause',
+  'next',
+  'previous',
+  'shuffle',
+  'repeat',
+  'favorite',
+  'outline-favorite',
+  'more',
+  'component',
+  'dropdown',
+  'dropup',
+  'circle',
+  'close',
+]

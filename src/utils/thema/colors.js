@@ -26,7 +26,7 @@ export const ColorProps = {
     light: '#C400FF',
   },
   'primary.3': {
-    dark: '#C490E4',
+    dark: '#8E98A8',
     light: '#C490E4',
   },
   'secondary.1': {
@@ -73,5 +73,8 @@ export const ColorProps = {
   card: {
     light: '#FFFFFF',
     dark: '#04122f',
+  },
+  button: {
+    main: '#622AFE',
   },
 }

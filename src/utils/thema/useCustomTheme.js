@@ -2,6 +2,7 @@ import { createTheme } from '@mui/material'
 import { globalTheme } from './thema'
 import { useAppSelector } from '../../features/store/store'
 import { componentThemes } from './components/componentThemes'
+
 export const useConsumTheme = () => {
   const theme = useAppSelector((state) => state.theme)
 

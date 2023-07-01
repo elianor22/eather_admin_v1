@@ -5,10 +5,11 @@ import PropTypes from 'prop-types'
 const TableIcon = ({ color, size, sx }) => {
   return (
     <BackupTableIcon
-      size={size}
+      fontSize={size}
       sx={{
         minWidth: '2px',
         color: color,
+        width:'100%',
         ...sx,
       }}
     />

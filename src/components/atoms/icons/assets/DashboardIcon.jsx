@@ -5,7 +5,7 @@ import PropTypes from 'prop-types'
 const DashboardIcon = ({ color, size, sx }) => {
   return (
     <MUIDashboardIcon
-      size={size}
+      fontSize={size}
       sx={{
         minWidth: '18px !important',
         color: color,

@@ -10,7 +10,6 @@ const CardWithAction = ({
   children,
   actionLabel,
   // eslint-disable-next-line no-unused-vars
-  onClick,
   href,
   sx,
   sxContent,
@@ -29,7 +28,6 @@ CardWithAction.propTypes = {
   title: PropTypes.string,
   titleVariant: PropTypes.oneOf(typoTypes),
   children: PropTypes.node,
-  onClick: PropTypes.func,
   sx: PropTypes.object,
   sxContent: PropTypes.object,
 }

@@ -1,13 +1,14 @@
 import React, { useEffect } from 'react'
-
 import { CacheProvider } from '@emotion/react'
 import { CssBaseline, ThemeProvider, useMediaQuery } from '@mui/material'
 import AppComponents from './components/AppComponents'
 import { useConsumTheme } from '../utils/thema/useCustomTheme'
-import { BrowserRouter } from 'react-router-dom'
+import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import createEmotionCache from '../utils/createEmotionChace'
 import { useAppDispatch } from '../features/store/store'
 import { setMediaQuery } from '../features/store/reducers/mediaQuery'
+import { routes } from '../routes/routes'
+import Notfound from '../pages/404NotFound/Notfound'
 
 const clientSideEmotion = createEmotionCache()
 
@@ -21,12 +22,37 @@ const AppContainer = () => {
     dispatch(setMediaQuery({ isSmallScreen, isMediumScreen, isLargeScreen }))
   }, [dispatch, isSmallScreen, isMediumScreen, isLargeScreen])
 
+  const renderRoutes = () => {
+    return routes.map(({ key, path, layout, element: Component, child: children }) => {
+      if (layout === '/admin') {
+        if (children) {
+          return children.map((child) => (
+            <Route key={`${layout}${child.path}`} path={`${layout}${child.path}`} element={child.element} />
+          ))
+        }
+        return (
+          <Route
+            key={key}
+            path={`${layout}${path}`}
+            element={<React.Suspense fallback="loading...">{Component}</React.Suspense>}
+          />
+        )
+      }
+    })
+  }
   return (
     <CacheProvider value={clientSideEmotion}>
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <BrowserRouter>
-          <AppComponents />
+          <Routes>
+            <Route path="/admin" element={<AppComponents />}>
+              {renderRoutes()}
+            </Route>
+            <Route path="/" element={<Navigate to={'/admin'} replace />} />
+            <Route path="/auth/login" element={<div>Login</div>} />
+            <Route path="*" element={<Notfound />} />
+          </Routes>
         </BrowserRouter>
       </ThemeProvider>
     </CacheProvider>
