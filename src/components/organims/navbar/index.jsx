@@ -1,9 +1,9 @@
-import { Avatar, Box, Button, IconButton, Menu, MenuItem } from '@mui/material'
+import { Avatar, Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material'
 import React from 'react'
 
 import MenuIcon from '@mui/icons-material/Menu'
 import { useAppDispatch, useAppSelector } from '../../../features/store/store'
-import { setExpanded } from '../../../features/store/reducers/sidebar'
+import { setExpanded, setIsOpenSidebar } from '../../../features/store/reducers/sidebar'
 import Typography from '../../atoms/Typography/Typography'
 import ThemaSwitch from '../../atoms/Switch/ThemaSwitch'
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -16,6 +16,8 @@ const Navbar = () => {
   const mediaQuery = useAppSelector((state) => state.mediaQuery)
   const dispatch = useAppDispatch()
   const [anchorElUser, setAnchorElUser] = React.useState(null)
+  const theme = useTheme()
+  const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'))
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget)
@@ -34,14 +36,20 @@ const Navbar = () => {
         borderBottom: '.2px solid #cdcdcd',
       }}
     >
-      <LogoWrapper maxWidth={sidebar.isExpand && mediaQuery.isLargeScreen ? '250px' : '70px'}>
-        <Typography variant="body1">Logo</Typography>
-      </LogoWrapper>
+      {isMediumScreen ? null : (
+        <LogoWrapper maxWidth={sidebar.isExpand && mediaQuery.isLargeScreen ? '250px' : '70px'}>
+          <Typography variant="body1">Logo</Typography>
+        </LogoWrapper>
+      )}
       <NavbarContent>
         <Button
           disableRipple
           onClick={() => {
-            dispatch(setExpanded(!sidebar.isExpand))
+            if (isMediumScreen) {
+              dispatch(setIsOpenSidebar(!sidebar.isOpenSidebar))
+            } else {
+              dispatch(setExpanded(!sidebar.isExpand))
+            }
           }}
         >
           <MenuIcon />

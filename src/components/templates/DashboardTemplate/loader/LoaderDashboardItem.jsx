@@ -5,7 +5,7 @@ const LoaderDashboardItem = () => {
   return (
     <Grid container spacing={2}>
       {[...Array(4)].map((_, idx) => (
-        <Grid key={idx} item lg={3}>
+        <Grid key={idx} item md={3} sm={6} xs={12} lg={3}>
           <Skeleton
             key={idx}
             sx={{

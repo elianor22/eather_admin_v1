@@ -12,6 +12,7 @@
     "@mui/material": "^5.13.5",
     "@nivo/bar": "^0.83.0",
     "@nivo/core": "^0.83.0",
+    "@nivo/line": "^0.83.0",
     "@nivo/pie": "^0.83.0",
     "@reduxjs/toolkit": "^1.9.5",
     "@testing-library/jest-dom": "^5.14.1",
@@ -54,6 +55,7 @@
     ]
   },
   "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "eslint": "^8.42.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "^7.32.2",

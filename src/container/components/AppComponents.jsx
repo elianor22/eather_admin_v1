@@ -1,11 +1,11 @@
 import React from 'react'
 import { Box } from '@mui/material'
 import styled from '@emotion/styled'
-import { Route, Routes } from 'react-router-dom'
+import { Outlet } from 'react-router-dom'
 import Sidebar from '../../layouts/sidebar/Sidebar'
 import MainContent from '../../layouts/MainContent'
-import { routes } from '../../routes/routes'
 import Navbar from '../../components/organims/Navbar'
+import '../../assets/styles/globalStyles.scss'
 
 const MainWrapper = styled(Box)(() => ({
   display: 'flex',
@@ -15,15 +15,9 @@ const MainWrapper = styled(Box)(() => ({
 }))
 
 const AppComponents = () => {
-  const renderRoutes = () => {
-    return routes.map((route) => {
-      return <Route key={route.path} path={route.path} element={route.element} />
-    })
-  }
   return (
     <MainWrapper>
       <Navbar />
-
       <Box
         sx={{
           display: 'flex',
@@ -33,10 +27,7 @@ const AppComponents = () => {
       >
         <Sidebar />
         <MainContent>
-          <Routes>
-            {renderRoutes()}
-            <Route path="/card" element={<div>wow</div>} />
-          </Routes>
+          <Outlet />
         </MainContent>
       </Box>
     </MainWrapper>
