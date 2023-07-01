@@ -5,9 +5,9 @@ import React from 'react'
 import SimpleCard from '../../components/molecules/Cards/SimpleCard'
 import SimpleCardActionLink from '../../components/molecules/Cards/SimpleCardActionLink'
 import Typography from '../../components/atoms/Typography/Typography'
-import CardHeadline from '../../components/organims/CardHeadline'
-import CardHeadlineImage from '../../components/organims/CardHeadlineImage'
-import CardItemNews from '../../components/organims/CardItemNews'
+import CardHeadline from '../../components/organisms/CardHeadline'
+import CardHeadlineImage from '../../components/organisms/CardHeadlineImage'
+import CardItemNews from '../../components/organisms/CardItemNews'
 
 import car from '../../assets/images/car.jpg'
 import newsImage from '../../assets/images/news.jpg'
@@ -15,10 +15,10 @@ import FoodImage from '../../assets/images/food.jpg'
 import music from '../../assets/images/music.jpg'
 
 import { mockDataProfile, mockProduct } from '../../dummy/mocksData'
-import CardProduct from '../../components/organims/CardProduct'
-import MediaControlMusic from '../../components/organims/MediaControlMusic'
+import CardProduct from '../../components/organisms/CardProduct'
+import MediaControlMusic from '../../components/organisms/MediaControlMusic'
 import CardItemUser from '../../components/molecules/Cards/CardItemUser'
-import CardProfile from '../../components/organims/CardProfile'
+import CardProfile from '../../components/organisms/CardProfile'
 
 const CardsPage = () => {
   return (

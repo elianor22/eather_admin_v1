@@ -1,12 +1,12 @@
 import { Box, Grid } from '@mui/material'
 import Typography from '../../atoms/Typography/Typography'
 import BaseCard from '../../molecules/Cards/BaseCard'
-import ChartBar from '../../organims/charts/Bar'
+import ChartBar from '../../organisms/charts/Bar'
 import React from 'react'
 import CardDashboardItem from '../../molecules/Cards/CardDashboardItem'
-import ChartLine from '../../organims/charts/Line'
-import ChartDoughnut from '../../organims/charts/Doughnut'
-import ChartPie from '../../organims/charts/Pie'
+import ChartLine from '../../organisms/charts/Line'
+import ChartDoughnut from '../../organisms/charts/Doughnut'
+import ChartPie from '../../organisms/charts/Pie'
 import { nivoColorTYpes } from '../../../constants/nivoColorsSchemas'
 
 // eslint-disable-next-line no-unused-vars

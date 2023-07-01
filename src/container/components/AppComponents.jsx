@@ -4,7 +4,7 @@ import styled from '@emotion/styled'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../../layouts/sidebar/Sidebar'
 import MainContent from '../../layouts/MainContent'
-import Navbar from '../../components/organims/Navbar'
+import Navbar from '../../components/organisms/Navbar'
 import '../../assets/styles/globalStyles.scss'
 
 const MainWrapper = styled(Box)(() => ({
