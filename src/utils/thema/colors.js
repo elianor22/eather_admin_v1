@@ -19,7 +19,7 @@ export const ColorProps = {
   },
   'primary.1': {
     dark: '#101829',
-    light: '#f3f3f3',
+    light: '#f0f4f7',
   },
   'primary.2': {
     dark: '#C400FF',

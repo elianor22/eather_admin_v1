@@ -4,60 +4,72 @@ import CardsPage from '../pages/cards/CardsPage'
 import ButtonPages from '../pages/Components/ButtonPages/ButtonPages'
 import IconPages from '../pages/Components/IconPages/IconPages'
 import { InputPages } from '../pages/Components/InputPages/InputPages'
+import Autocomplate from '../pages/Components/autocomplate/Autocomplate'
+import ComponentPages from '../pages/Components'
 // import TableViewIcon from '@mui/icons-material/TableView'
 
 export const routes = [
   {
     key: 'dashboard',
     name: 'Dashboard',
-    path: '/',
+    path: '',
     element: <Dashboard />,
     // loader: rootLoader,
     icon: 'dashboard',
-    layout: '/admin',
+    layout: 'admin',
   },
   {
     key: 'cards',
     name: 'Cards',
-    path: '/card',
+    path: 'card',
     element: <CardsPage />,
     // loader: rootLoader,
     icon: 'card',
-    layout: '/admin',
+    layout: 'admin',
   },
   {
     key: 'tables',
     name: 'Tables Example',
     element: <div>Table</div>,
     icon: 'table',
-    path: '/table',
-    layout: '/admin',
+    path: 'table',
+    layout: 'admin',
   },
   {
     key: 'components',
     name: 'Components Example',
-    element: <div>Components</div>,
+    element: <ComponentPages />,
     icon: 'component',
-    path: '/component',
-    layout: '/admin',
+    path: 'component',
+    layout: 'admin',
     child: [
       {
         name: 'Icons',
-        path: '/component/icons',
+        abbr: 'Icn',
+        path: 'icons',
         element: <IconPages />,
-        layout: '/admin',
+        layout: 'admin',
       },
       {
         name: 'Button',
-        path: '/component/button',
+        abbr: 'Btn',
+        path: 'button',
         element: <ButtonPages />,
-        layout: '/admin',
+        layout: 'admin',
       },
       {
         name: 'Input',
-        path: '/component/input',
-        element: <InputPages/>,
-        layout: '/admin',
+        abbr: 'Ipt',
+        path: 'input',
+        element: <InputPages />,
+        layout: 'admin',
+      },
+      {
+        name: 'Autocomplete',
+        abbr: 'Atc',
+        path: 'autocomplete',
+        element: <Autocomplate />,
+        layout: 'admin',
       },
     ],
   },

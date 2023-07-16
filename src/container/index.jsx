@@ -5,10 +5,10 @@ import AppComponents from './components/AppComponents'
 import { useConsumTheme } from '../utils/thema/useCustomTheme'
 import { BrowserRouter, Navigate, Route, Routes } from 'react-router-dom'
 import createEmotionCache from '../utils/createEmotionChace'
-import { useAppDispatch } from '../features/store/store'
-import { setMediaQuery } from '../features/store/reducers/mediaQuery'
 import { routes } from '../routes/routes'
 import Notfound from '../pages/404NotFound/Notfound'
+import { useAppDispatch } from '../store'
+import { setMediaQuery } from '../store/reducers/mediaQuery'
 
 const clientSideEmotion = createEmotionCache()
 
@@ -18,24 +18,26 @@ const AppContainer = () => {
   const isSmallScreen = useMediaQuery('(max-width: 600px)')
   const isMediumScreen = useMediaQuery('(min-width: 601px) and (max-width: 960px)')
   const isLargeScreen = useMediaQuery('(min-width: 961px)')
+
   useEffect(() => {
     dispatch(setMediaQuery({ isSmallScreen, isMediumScreen, isLargeScreen }))
   }, [dispatch, isSmallScreen, isMediumScreen, isLargeScreen])
 
   const renderRoutes = () => {
     return routes.map(({ key, path, layout, element: Component, child: children }) => {
-      if (layout === '/admin') {
+      if (layout === 'admin') {
         if (children) {
-          return children.map((child) => (
-            <Route key={`${layout}${child.path}`} path={`${layout}${child.path}`} element={child.element} />
-          ))
+          return (
+            <Route key={key} path={path} >
+              <Route index element={Component} />
+              {children.map((child) => (
+                <Route key={child.path} path={child.path} element={child.element} />
+              ))}
+            </Route>
+          )
         }
         return (
-          <Route
-            key={key}
-            path={`${layout}${path}`}
-            element={<React.Suspense fallback="loading...">{Component}</React.Suspense>}
-          />
+          <Route key={key} path={path} element={<React.Suspense fallback="loading...">{Component}</React.Suspense>} />
         )
       }
     })
@@ -46,10 +48,10 @@ const AppContainer = () => {
         <CssBaseline />
         <BrowserRouter>
           <Routes>
-            <Route path="/admin" element={<AppComponents />}>
+            <Route path="admin" element={<AppComponents />}>
               {renderRoutes()}
             </Route>
-            <Route path="/" element={<Navigate to={'/admin'} replace />} />
+            <Route path="/" element={<Navigate to={'admin'} replace />} />
             <Route path="/auth/login" element={<div>Login</div>} />
             <Route path="*" element={<Notfound />} />
           </Routes>

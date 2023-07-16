@@ -2,14 +2,25 @@
 import styled from '@emotion/styled'
 import { Box, ListItemText } from '@mui/material'
 
-export const SidebarWrapper = styled(Box)(({ padding, borderLeft }) => {
+export const SidebarWrapper = styled(Box)(() => {
   return {
-    padding: padding,
-    display: 'flex',
-    flexDirection: 'column',
-    width: '100%',
-    marginTop: '2px',
-    borderLeft,
+    position: 'relative',
+    top: 0,
+    flexGrow: 1,
+    bottom: 0,
+    overflowY: 'auto',
+    left: 0,
+    right: 0,
+    '&::-webkit-scrollbar': {
+      width: '8px',
+    },
+    '&::-webkit-scrollbar-thumb': {
+      background: '#999',
+      borderRadius: '10px',
+    },
+    '&::-webkit-scrollbar-track': {
+      background: '#f1f1f1',
+    },
   }
 })
 
@@ -17,8 +28,11 @@ export const SidebarItem = styled(ListItemText)(({ color }) => ({
   fontFamily: 'Poppins',
   margin: 0,
   fontWeight: 500,
-  fontSize: '14px',
+  fontSize: '12px',
   lineHeight: '21px',
   display: 'block',
   color: color,
+  '& span': {
+    fontSize: 'inherit',
+  },
 }))

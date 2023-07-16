@@ -6,7 +6,11 @@ import PropTypes from 'prop-types'
 
 const CardHeadline = ({ title, discription, href, image, alt }) => {
   return (
-    <Card>
+    <Card
+      sx={{
+        boxShadow: 'unset',
+      }}
+    >
       <CardHeadlineImageWrapper>
         <img src={image} alt={alt} loading="lazy" />
       </CardHeadlineImageWrapper>

@@ -1,9 +1,9 @@
 export const globalTheme = {
   palette: {
     'background.1': {
-      light: '#FAFAFA',
+      light: '#f4f7fe',
       dark: '#131a2b',
-      main: '#FAFAFA',
+      main: '#f4f7fe',
     },
     'tiles.1': {
       light: '#FFFFFF',

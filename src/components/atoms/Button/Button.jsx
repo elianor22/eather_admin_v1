@@ -1,11 +1,9 @@
-/* eslint-disable no-unused-vars */
 import React from 'react'
 import { IconButton, Button as MUIButton } from '@mui/material'
 import PropTypes from 'prop-types'
 import { buttonColors, buttonIconPosition, buttonTypes } from '../../../constants/button'
-// import { ColorProps } from '../../../utils/thema/colors'
 
-const Button = ({ variant, onClick, children, startIcon, endIcon, sx, color, ...props }) => {
+const Button = ({ variant, onClick, children, startIcon, endIcon, sx, color, type, ...props }) => {
   if (variant === 'icon') {
     return (
       <IconButton onClick={onClick} sx={{ ...sx }} {...props}>
@@ -20,13 +18,9 @@ const Button = ({ variant, onClick, children, startIcon, endIcon, sx, color, ...
       startIcon={startIcon}
       endIcon={endIcon}
       color={color}
+      type={type}
       sx={{
         ...sx,
-        // backgroundColor: ColorProps['button']['main'],
-        // color: '#FFFFFF',
-        // '&:hover': {
-        //   backgroundColor: '#5826E5',
-        // },
       }}
       {...props}
     >
@@ -43,6 +37,7 @@ Button.propTypes = {
   startIcon: PropTypes.node,
   endIcon: PropTypes.node,
   color: PropTypes.oneOf(buttonColors),
+  type: PropTypes.string,
   sx: PropTypes.object,
 }
 

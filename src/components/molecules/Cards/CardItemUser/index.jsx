@@ -26,23 +26,25 @@ const CardItemUser = ({ name, desc, userImage, onClick, onClickRemove }) => {
           <Button
             variant="icon"
             onClick={onClick}
-            icon={<Icon variant="favorite" color={'red'} />}
             disableRipple
             sx={{
               padding: '0px',
               minWidth: 'unset',
               marginRight: '12px',
             }}
-          />
+          >
+            <Icon variant="favorite" color={'red'} />
+          </Button>
           <Button
             variant="icon"
             onClick={onClickRemove}
-            icon={<Icon variant={'more'} />}
             sx={{
               padding: '0px',
               minWidth: 'unset',
             }}
-          />
+          >
+            <Icon variant={'more'} />
+          </Button>
         </ButtonGroup>
       </CardContent>
     </Card>
