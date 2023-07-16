@@ -8,7 +8,6 @@ import BaseCard from '../../../components/molecules/Cards/BaseCard'
 const IconPages = () => {
   return (
     <Box>
-      <Typography variant="h1">Icons</Typography>
       <Box mt={1}>
         <Typography>Icon Size</Typography>
         <Box display={'flex'}>

@@ -23,9 +23,6 @@ import CardProfile from '../../components/organisms/CardProfile'
 const CardsPage = () => {
   return (
     <Box>
-      <Typography variant="h1" mb="30px">
-        Cards Example
-      </Typography>
       <Grid container spacing={2}>
         <Grid item lg={4} md={4} sm={6} xs={12}>
           <SimpleCard
@@ -85,13 +82,6 @@ const CardsPage = () => {
             alt="amazing card image"
           />
         </Grid>
-      </Grid>
-      <Grid container spacing={2} mt={4}>
-        <Grid item lg={2} md={3} sm={4} xs={6}>
-          <Box>
-            <CardProduct dataProduct={mockProduct} />
-          </Box>
-        </Grid>
         <Grid item lg={3} md={5} sm={6} xs={6}>
           <CardProfile dataUser={mockDataProfile} />
           <Box mt={2}>
@@ -102,6 +92,11 @@ const CardsPage = () => {
               onClick={console.log}
               onClickRemove={console.log}
             />
+          </Box>
+        </Grid>
+        <Grid item lg={2} md={3} sm={4} xs={6}>
+          <Box>
+            <CardProduct dataProduct={mockProduct} />
           </Box>
         </Grid>
         <Grid item xl={4} lg={5} md={7} sm={6} xs={8}>

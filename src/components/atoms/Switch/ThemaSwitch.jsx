@@ -1,7 +1,7 @@
 import React from 'react'
 import { MaterialUISwitch } from './elements'
-import { useAppDispatch, useAppSelector } from '../../../features/store/store'
-import { toggleTheme } from '../../../features/store/reducers/themeReducer'
+import { useAppDispatch, useAppSelector } from '../../../store'
+import { toggleTheme } from '../../../store/reducers/themeReducer'
 
 const ThemaSwitch = () => {
   const theme = useAppSelector((state) => state.theme)

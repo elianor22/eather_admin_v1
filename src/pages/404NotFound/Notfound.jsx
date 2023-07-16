@@ -6,30 +6,20 @@ const Notfound = () => {
   return (
     <Box
       sx={{
-        position: 'fixed',
-        top: 0,
-        left: 0,
-        width: '100%',
+        display: 'flex',
+        justifyContent: 'center',
+        alignItems: 'center',
         height: '100%',
-        backgroundColor: 'white',
-        zIndex: 100,
+        flexDirection: 'column',
+        minHeight: '100vh',
+        p: '1rem',
       }}
     >
-      <Box
-        sx={{
-          display: 'flex',
-          justifyContent: 'center',
-          alignItems: 'center',
-          height: '100%',
-          flexDirection: 'column',
-        }}
-      >
-        <Typography variant="h2">404 Not Found</Typography>
-        <Typography>Oops! sorry this page not found please click botton below for back to home</Typography>
-        <Button href="/" variant="contained">
-          Home
-        </Button>
-      </Box>
+      <Typography variant="h2">404 Not Found</Typography>
+      <Typography>Oops! sorry this page not found please click botton below for back to home</Typography>
+      <Button href="/" variant="contained">
+        Home
+      </Button>
     </Box>
   )
 }

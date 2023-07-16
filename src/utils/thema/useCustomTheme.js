@@ -1,6 +1,6 @@
 import { createTheme } from '@mui/material'
 import { globalTheme } from './thema'
-import { useAppSelector } from '../../features/store/store'
+import { useAppSelector } from '../../store'
 import { componentThemes } from './components/componentThemes'
 
 export const useConsumTheme = () => {

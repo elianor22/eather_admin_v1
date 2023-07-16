@@ -2,8 +2,8 @@ import { Avatar, Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useThem
 import React from 'react'
 
 import MenuIcon from '@mui/icons-material/Menu'
-import { useAppDispatch, useAppSelector } from '../../../features/store/store'
-import { setExpanded, setIsOpenSidebar } from '../../../features/store/reducers/sidebar'
+import { useAppDispatch, useAppSelector } from '../../../store'
+import { setExpanded, setIsOpenSidebar } from '../../../store/reducers/sidebar'
 import Typography from '../../atoms/Typography/Typography'
 import ThemaSwitch from '../../atoms/Switch/ThemaSwitch'
 import NotificationsIcon from '@mui/icons-material/Notifications'
@@ -33,7 +33,11 @@ const Navbar = () => {
         height: '60px',
         width: '100%',
         display: 'flex',
-        borderBottom: '.2px solid #cdcdcd',
+        boxShadow: ({ palette }) => `0px 0px 10px ${palette.mode === 'light' ? '#c6e0f9' : '#0000004f'}`,
+        position: 'sticky',
+        top: 0,
+        backgroundColor: ({ palette }) => palette.background.default,
+        zIndex: 2,
       }}
     >
       {isMediumScreen ? null : (

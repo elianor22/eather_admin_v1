@@ -3,31 +3,36 @@ import PropTypes from 'prop-types'
 import { InputAdornment, TextField } from '@mui/material'
 import { inputSizes, inputTypes } from '../../../constants/input'
 
-const BaseInput = ({
+const InputField = ({
   name,
-  type = 'text',
+  type,
   variant,
   value,
   onChange,
   defaultValue,
-  size = 'small',
+  size,
+  label,
   placeholder,
   color,
   disabled,
   notAllow,
   autoFocus,
   fullWidth,
+  onBlur,
   startAdornmentText,
   endAdornmentText,
+  startIcon,
+  endIcon,
   error,
+  InputProps,
   sx,
   ...props
 }) => {
-  console.log(endAdornmentText)
   return (
     <TextField
       id={name}
       name={name}
+      label={label}
       variant={variant}
       value={value}
       onChange={(e) => onChange?.(e.target.value)}
@@ -36,6 +41,7 @@ const BaseInput = ({
       size={size}
       placeholder={placeholder}
       color={color}
+      onBlur={onBlur}
       disabled={disabled}
       autoFocus={autoFocus}
       fullWidth={fullWidth}
@@ -46,6 +52,14 @@ const BaseInput = ({
         ...(endAdornmentText && {
           endAdornment: <InputAdornment position="end">{endAdornmentText}</InputAdornment>,
         }),
+        ...(startIcon && {
+          startAdornment: <InputAdornment position="start">{startIcon}</InputAdornment>,
+        }),
+        ...(endIcon && {
+          endAdornment: <InputAdornment position="end">{endIcon}</InputAdornment>,
+        }),
+
+        ...InputProps,
       }}
       error={error}
       sx={{
@@ -59,11 +73,18 @@ const BaseInput = ({
   )
 }
 
-BaseInput.propTypes = {
-  name: PropTypes.string.isRequired,
+InputField.defaultProps = {
+  type: 'text',
+  size: 'small',
+}
+
+InputField.propTypes = {
+  name: PropTypes.string,
   type: PropTypes.oneOf(inputTypes),
   value: PropTypes.string,
+  label: PropTypes.string,
   onChange: PropTypes.func,
+  onBlur: PropTypes.func,
   defaultValue: PropTypes.string,
   size: PropTypes.oneOf(inputSizes),
   placeholder: PropTypes.string,
@@ -73,6 +94,9 @@ BaseInput.propTypes = {
   notAllow: PropTypes.bool,
   autoFocus: PropTypes.bool,
   error: PropTypes.bool,
+  InputProps: PropTypes.object,
+  startIcon: PropTypes.node,
+  endIcon: PropTypes.node,
 }
 
-export default BaseInput
+export default InputField

@@ -4,32 +4,37 @@ import styled from '@emotion/styled'
 import { Outlet } from 'react-router-dom'
 import Sidebar from '../../layouts/sidebar/Sidebar'
 import MainContent from '../../layouts/MainContent'
-import Navbar from '../../components/organisms/Navbar'
 import '../../assets/styles/globalStyles.scss'
+import Navbar from '../../components/organisms/Navbar'
+import AdminFooter from '../../layouts/footer/adminFooter'
 
-const MainWrapper = styled(Box)(() => ({
-  display: 'flex',
-  width: '100%',
-  minHeight: '100vh',
-  flexDirection: 'column',
-}))
+const MainWrapper = styled(Box)(({ theme }) => {
+  return {
+    display: 'flex',
+    flexDirection: 'column',
+    width: '100%',
+    minHeight: '100vh',
+    backgroundColor: theme.palette['background.1'][theme.palette.mode],
+  }
+})
 
 const AppComponents = () => {
   return (
     <MainWrapper>
       <Navbar />
-      <Box
+      <Sidebar />
+      {/* <Box
         sx={{
           display: 'flex',
           width: '100%',
           flexDirection: 'row',
         }}
-      >
-        <Sidebar />
-        <MainContent>
-          <Outlet />
-        </MainContent>
-      </Box>
+      > */}
+      <MainContent>
+        <Outlet />
+      </MainContent>
+      {/* </Box> */}
+      <AdminFooter />
     </MainWrapper>
   )
 }
