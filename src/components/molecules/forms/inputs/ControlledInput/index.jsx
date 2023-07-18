@@ -2,8 +2,8 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { FormControl, FormLabel, TextField } from '@mui/material'
 import { Controller } from 'react-hook-form'
-import { inputSizes } from '../../../../constants/input'
-import { Spacing } from '../../../../utils/thema/spacing'
+import { Spacing } from '../../../../../utils/thema/spacing'
+import { inputSizes } from '../../../../../constants/input'
 
 const ControlledInput = ({
   name,

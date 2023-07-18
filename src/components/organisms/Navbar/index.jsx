@@ -41,7 +41,7 @@ const Navbar = () => {
       }}
     >
       {isMediumScreen ? null : (
-        <LogoWrapper maxWidth={sidebar.isExpand && mediaQuery.isLargeScreen ? '250px' : '70px'}>
+        <LogoWrapper maxWidth={sidebar.isExpand && mediaQuery.isLargeScreen ? '216px' : '70px'}>
           <Typography variant="body1">Logo</Typography>
         </LogoWrapper>
       )}
