@@ -23,17 +23,9 @@ const AppComponents = () => {
     <MainWrapper>
       <Navbar />
       <Sidebar />
-      {/* <Box
-        sx={{
-          display: 'flex',
-          width: '100%',
-          flexDirection: 'row',
-        }}
-      > */}
       <MainContent>
         <Outlet />
       </MainContent>
-      {/* </Box> */}
       <AdminFooter />
     </MainWrapper>
   )

@@ -1,6 +1,6 @@
+/* eslint-disable no-unused-vars */
 import { Box, Grid } from '@mui/material'
 import React from 'react'
-import InputField from '../../components/molecules/Inputs/InputField'
 import { Search } from '@mui/icons-material'
 import { Spacing } from '../../utils/thema/spacing'
 import { useGetPath } from '../../hooks/useGetPath'
@@ -8,6 +8,8 @@ import { routes } from '../../routes/routes'
 import BaseCard from '../../components/molecules/Cards/BaseCard'
 import Icon from '../../components/atoms/icons'
 import Typography from '../../components/atoms/Typography/Typography'
+import { Link } from 'react-router-dom'
+// import InputField from '../../components/molecules/forms/Inputs/InputField'
 
 const ComponentPages = () => {
   const { currentPath } = useGetPath()
@@ -15,7 +17,7 @@ const ComponentPages = () => {
   return (
     <Box width={'100%'} mt={Spacing['xl']}>
       <Box display={'flex'} justifyContent={'center'}>
-        <InputField
+        {/* <InputField
           placeholder={`Search ${currentPath}`}
           startIcon={<Search />}
           sx={{
@@ -25,7 +27,7 @@ const ComponentPages = () => {
               borderRadius: '30px',
             },
           }}
-        />
+        /> */}
       </Box>
       <Grid
         container
@@ -39,10 +41,35 @@ const ComponentPages = () => {
           .map((base) =>
             base.child.map((route) => (
               <Grid key={route.path} item xs={6} sm={4} md={3} lg={2}>
-                <BaseCard>
-                  <Icon variant={route.icon} />
-                  <Typography>{route.name}</Typography>
-                </BaseCard>
+                <Link
+                  to={route.path}
+                  style={{
+                    textDecoration: 'unset',
+                  }}
+                >
+                  <BaseCard
+                    sxContent={{
+                      padding: 1,
+                    }}
+                  >
+                    <Box display={'flex'} width={'100%'} alignItems={'center'}>
+                      <Icon
+                        variant={route.name.toLowerCase() === 'icons' ? 'icon' : route.name.toLowerCase()}
+                        size={'large'}
+                        color={'#622AFE'}
+                      />
+                      <Box px={'12px'}>
+                        <Typography
+                          sx={{
+                            fontWeight: 700,
+                          }}
+                        >
+                          {route.name}
+                        </Typography>
+                      </Box>
+                    </Box>
+                  </BaseCard>
+                </Link>
               </Grid>
             ))
           )}
