@@ -18,4 +18,10 @@ export const iconsVariants = [
   'dropup',
   'circle',
   'close',
+  'input',
+  'autocomplete',
+  'typography',
+  'button',
+  'icon',
+  'select',
 ]
