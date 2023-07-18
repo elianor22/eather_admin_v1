@@ -1,11 +1,8 @@
 import { Box, FormControl, FormLabel } from '@mui/material'
 import React from 'react'
 import Typography from '../../../components/atoms/Typography/Typography'
-import { inputTypes, inputVariants } from '../../../constants/input'
+
 import Icon from '../../../components/atoms/icons'
-import InputField from '../../../components/molecules/Inputs/InputField'
-import InputPassword from '../../../components/molecules/Inputs/InputPassword/Index'
-import ControlledInput from '../../../components/molecules/Inputs/ControlledInput'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 import Button from '../../../components/atoms/Button/Button'
@@ -13,7 +10,11 @@ import { controlledInputValidations } from '../../../utils/formValidations/input
 import BaseCard from '../../../components/molecules/Cards/BaseCard'
 import { ColorProps } from '../../../utils/thema/colors'
 import { useTheme } from '@emotion/react'
-import InputFieldMulti from '../../../components/molecules/Inputs/InputFieldMultiple'
+import InputField from '../../../components/molecules/forms/inputs/InputField'
+import InputFieldMulti from '../../../components/molecules/forms/inputs/InputFieldMultiple'
+import ControlledInput from '../../../components/molecules/forms/inputs/ControlledInput'
+import { inputTypes, inputVariants } from '../../../constants/input'
+import InputPassword from '../../../components/molecules/forms/inputs/InputPassword'
 
 export const InputPages = () => {
   const {

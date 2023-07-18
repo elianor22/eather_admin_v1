@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { InputAdornment, TextField } from '@mui/material'
-import { inputSizes, inputTypes } from '../../../constants/input'
+import { inputSizes, inputTypes } from '../../../../../constants/input'
+
 
 const InputField = ({
   name,

@@ -19,6 +19,12 @@ import ArrowDropUpIcon from './assets/ArrowDropUpIcon'
 import ArrowDropDownIcon from './assets/ArrowDropDownIcon'
 import CircleIcon from './assets/CircleIcon'
 import CloseIcon from './assets/CloseIcon'
+import InputIcon from './assets/InputIcon'
+import AutocomplateIcon from './assets/AutocomplateIcon'
+import TypographyIcon from './assets/TypographyIcon'
+import ButtonIcon from './assets/ButtonIcon'
+import IconsIcon from './assets/IconsIcon'
+import SelectIcon from './assets/SelectIcon'
 
 const components = {
   dashboard: DashboardIcon,
@@ -39,6 +45,12 @@ const components = {
   dropup: ArrowDropUpIcon,
   circle: CircleIcon,
   close: CloseIcon,
+  input: InputIcon,
+  autocomplete: AutocomplateIcon,
+  typography: TypographyIcon,
+  button: ButtonIcon,
+  icon: IconsIcon,
+  select: SelectIcon,
 }
 
 const Icon = ({ variant, color, size, sx }) => {
