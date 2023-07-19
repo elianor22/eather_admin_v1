@@ -1,7 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { TextField } from '@mui/material'
-import { inputVariants } from '../../../../constants/input'
+import { inputVariants } from '../../../../../constants/input'
+
 
 const InputFieldMulti = ({
   variant,

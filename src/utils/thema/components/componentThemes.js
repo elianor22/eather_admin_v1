@@ -6,6 +6,7 @@ export const componentThemes = (theme) => {
       styleOverrides: {
         root: {
           backgroundColor: ColorProps.card[theme] || '#fff',
+          backgroundImage: 'unset',
         },
       },
     },
