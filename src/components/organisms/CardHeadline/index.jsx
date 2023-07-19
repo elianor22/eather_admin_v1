@@ -1,20 +1,25 @@
-import { Box, Button, Card, CardContent } from '@mui/material'
+import { Box, Button } from '@mui/material'
 import React from 'react'
 import { CardHeadlineDescription, CardHeadlineImageWrapper } from './elements'
 import Typography from '../../atoms/Typography/Typography'
 import PropTypes from 'prop-types'
+import BaseCard from '../../molecules/Cards/BaseCard'
 
 const CardHeadline = ({ title, discription, href, image, alt }) => {
   return (
-    <Card
+    <BaseCard
       sx={{
         boxShadow: 'unset',
+      }}
+      sxContent={{
+        padding: '0px !important',
       }}
     >
       <CardHeadlineImageWrapper>
         <img src={image} alt={alt} loading="lazy" />
       </CardHeadlineImageWrapper>
-      <CardContent>
+
+      <Box p={2}>
         <Typography variant="h4" mb={'5px'}>
           {title}
         </Typography>
@@ -30,8 +35,8 @@ const CardHeadline = ({ title, discription, href, image, alt }) => {
             Read More
           </Button>
         </Box>
-      </CardContent>
-    </Card>
+      </Box>
+    </BaseCard>
   )
 }
 

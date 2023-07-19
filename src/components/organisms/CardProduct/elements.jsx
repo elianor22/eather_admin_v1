@@ -1,16 +1,17 @@
 import styled from '@emotion/styled'
-import { Box, Card } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 import { Spacing } from '../../../utils/thema/spacing'
 import { Link } from 'react-router-dom'
 import { ColorProps } from '../../../utils/thema/colors'
 import Typography from '../../atoms/Typography/Typography'
 import React from 'react'
 
-export const ProductWrapper = styled(Card)(() => ({
+export const ProductWrapper = styled(Paper)(({ theme }) => ({
   display: 'flex',
   width: '100%',
   height: '100%',
   borderRadius: Spacing['s'],
+  backgroundColor: ColorProps['card'][theme.palette.mode],
 }))
 
 export const ProductContent = styled(Box)(() => ({

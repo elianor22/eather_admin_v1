@@ -72,7 +72,7 @@ export const ColorProps = {
   sidebar: { active: '#622AFE', hover: '#EFEAFF' },
   card: {
     light: '#FFFFFF',
-    dark: '#04122f',
+    dark: '#0b1d43',
   },
   button: {
     main: '#622AFE',
