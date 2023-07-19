@@ -3,6 +3,7 @@ import PropTypes from 'prop-types'
 import { Box, CardContent, Paper } from '@mui/material'
 import Typography, { typoTypes } from '../../atoms/Typography/Typography'
 import { Spacing } from '../../../utils/thema/spacing'
+import { ColorProps } from '../../../utils/thema/colors'
 
 const BaseCard = ({ title, elevation, titleVariant, children, sx, sxContent, ...props }) => {
   return (
@@ -11,10 +12,12 @@ const BaseCard = ({ title, elevation, titleVariant, children, sx, sxContent, ...
       {...props}
       sx={{
         borderRadius: Spacing['sm'],
+        backgroundColor: ({ palette }) => ColorProps['card'][palette.mode],
+        overflow: 'hidden',
         ...sx,
       }}
     >
-      <CardContent sx={{ sxContent }}>
+      <CardContent sx={{ ...sxContent }}>
         {title ? (
           <Typography
             variant={titleVariant}
