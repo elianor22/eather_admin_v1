@@ -1,12 +1,12 @@
 /* eslint-disable react/no-unescaped-entities */
 import { Box, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
 import React from 'react'
-import SimpleAutocomplate from '../../../components/molecules/forms/autocomplate/SimpleAutocomplate'
 import { useForm } from 'react-hook-form'
 import { mockDataAutocomplate } from '../../../dummy/mocksData'
 import BaseCard from '../../../components/molecules/Cards/BaseCard'
 import Typography from '../../../components/atoms/Typography/Typography'
 import Link from '../../../components/atoms/Link'
+import SimpleAutocomplate from '../../../components/molecules/forms/autocomplate/SimpleAutocomplate'
 import ControlledAutocomplete from '../../../components/molecules/forms/autocomplate/ControlledAutocomplete'
 
 const Autocomplate = () => {
