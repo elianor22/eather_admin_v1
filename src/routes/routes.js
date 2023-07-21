@@ -5,7 +5,7 @@ import ButtonPages from '../pages/Components/ButtonPages/ButtonPages'
 import IconPages from '../pages/Components/IconPages/IconPages'
 import { InputPages } from '../pages/Components/InputPages/InputPages'
 import ComponentPages from '../pages/Components'
-import Autocomplate from '../pages/Components/Autocomplate/Autocomplate'
+import Autocomplate from '../pages/Components/Autocomplete/Autocomplete'
 
 // import TableViewIcon from '@mui/icons-material/TableView'
 
