@@ -1,9 +1,9 @@
 import styled from '@emotion/styled'
-import { Box, Card } from '@mui/material'
+import { Box, Paper } from '@mui/material'
 import { Link } from 'react-router-dom'
 import { ColorProps } from '../../../utils/thema/colors'
 
-export const CardWrapper = styled(Card)(() => ({
+export const CardWrapper = styled(Paper)(() => ({
   position: 'relative',
   width: '100%',
   height: '100%',

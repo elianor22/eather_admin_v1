@@ -4,8 +4,9 @@ import CardsPage from '../pages/cards/CardsPage'
 import ButtonPages from '../pages/Components/ButtonPages/ButtonPages'
 import IconPages from '../pages/Components/IconPages/IconPages'
 import { InputPages } from '../pages/Components/InputPages/InputPages'
-import Autocomplate from '../pages/Components/autocomplate/Autocomplate'
 import ComponentPages from '../pages/Components'
+import AutocomplatePages from '../pages/Components/Autocomplete/AutocompletePages'
+
 // import TableViewIcon from '@mui/icons-material/TableView'
 
 export const routes = [
@@ -68,7 +69,7 @@ export const routes = [
         name: 'Autocomplete',
         abbr: 'Atc',
         path: 'autocomplete',
-        element: <Autocomplate />,
+        element: <AutocomplatePages />,
         layout: 'admin',
       },
     ],

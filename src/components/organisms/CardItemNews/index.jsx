@@ -10,6 +10,7 @@ const CardItemNews = ({ title, imageUrl, href }) => {
     <Card
       sx={{
         backgroundColor: 'transparent',
+        backgroundImage: 'unset',
         boxShadow: 'none',
       }}
     >

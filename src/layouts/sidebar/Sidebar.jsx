@@ -75,6 +75,7 @@ const Sidebar = () => {
                         handleClick(idx)
                       }}
                       sx={{
+                        position: 'relative',
                         padding: sidebar.isExpand ? '12px 16px' : '12px 0px',
                         backgroundColor: selectedItem === idx || item.path === getLastSelected ? '#EFEAFF' : 'unset',
                         '& .mui-1op4pi2-MuiListItemIcon-root': {
@@ -88,6 +89,7 @@ const Sidebar = () => {
                                 minWidth: '70px',
                               }),
                         },
+
                         '&:hover': {
                           backgroundColor: '#EFEAFF',
                           '& .MuiTypography-root': {
@@ -248,15 +250,18 @@ const Sidebar = () => {
                   >
                     <ListItemButton
                       key={idx}
-                      className=""
                       sx={{
+                        position: 'relative',
                         padding: sidebar.isExpand ? '12px 16px' : '12px 0px',
                         backgroundColor: selectedItem === idx ? '#EFEAFF' : 'unset',
                         ...(sidebar.isExpand && {
                           borderRight: `2px solid ${selectedItem === idx ? ColorProps.sidebar.active : 'unset'}`,
                         }),
+                        transition: 'all .5s',
+
                         '&:hover': {
                           backgroundColor: '#EFEAFF',
+                          transition: 'all .3s',
                           '& .MuiTypography-root': {
                             color: ColorProps['sidebar']['active'],
                           },

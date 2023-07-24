@@ -13,6 +13,7 @@ const BaseCard = ({ title, elevation, titleVariant, children, sx, sxContent, ...
       sx={{
         borderRadius: Spacing['sm'],
         backgroundColor: ({ palette }) => ColorProps['card'][palette.mode],
+        overflow: 'hidden',
         ...sx,
       }}
     >
