@@ -41,6 +41,7 @@ const ComponentPages = () => {
           }}
         />
       </Box>
+
       <Grid
         container
         spacing={2}
@@ -51,7 +52,7 @@ const ComponentPages = () => {
       >
         {filtering.map((route) => {
           return (
-            <Grid key={route.path} item xs={6} sm={4} md={3} lg={2} >
+            <Grid key={route.path} item xs={6} sm={4} md={3} lg={2}>
               <Link
                 to={route.path}
                 style={{
@@ -87,7 +88,7 @@ const ComponentPages = () => {
                     variant="body2"
                     fontWeight={600}
                     sx={{
-                      mt:1,
+                      mt: 1,
                       color: ({ palette }) => palette['typo.3'][palette.mode],
                       opacity: 0.7,
                     }}

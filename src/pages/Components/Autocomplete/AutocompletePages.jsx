@@ -9,7 +9,7 @@ import Link from '../../../components/atoms/Link'
 import SimpleAutocomplate from '../../../components/molecules/forms/autocomplate/SimpleAutocomplate'
 import ControlledAutocomplete from '../../../components/molecules/forms/autocomplate/ControlledAutocomplete'
 
-const Autocomplate = () => {
+const AutocomplatePages = () => {
   const {
     control,
     formState: { errors },
@@ -97,4 +97,4 @@ const Autocomplate = () => {
   )
 }
 
-export default Autocomplate
+export default AutocomplatePages
