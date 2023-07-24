@@ -345,3 +345,66 @@ export const mockDataAutocomplate = [
   { label: '3 Idiots', year: 2009 },
   { label: 'Monty Python and the Holy Grail', year: 1975 },
 ]
+
+export const mockBasicTable = [
+  {
+    id: 1,
+    firstName: 'Carlos',
+    lastName: 'Matthiesen',
+    email: 'cmatthiesen0@diigo.com',
+  },
+  {
+    id: 2,
+    firstName: 'Horten',
+    lastName: 'Sexty',
+    email: 'hsexty1@pagesperso-orange.fr',
+  },
+  {
+    id: 3,
+    firstName: 'Florri',
+    lastName: 'Camelli',
+    email: 'fcamelli2@mozilla.org',
+  },
+  {
+    id: 4,
+    firstName: 'Court',
+    lastName: 'Whye',
+    email: 'cwhye3@amazonaws.com',
+  },
+  {
+    id: 5,
+    firstName: 'Mollee',
+    lastName: 'Rubinovitsch',
+    email: 'mrubinovitsch4@github.io',
+  },
+  {
+    id: 6,
+    firstName: 'Corabella',
+    lastName: 'Seefus',
+    email: 'cseefus5@washington.edu',
+  },
+  {
+    id: 7,
+    firstName: 'Derk',
+    lastName: 'Dasent',
+    email: 'ddasent6@github.io',
+  },
+  {
+    id: 8,
+    firstName: 'Wendie',
+    lastName: 'Howley',
+    email: 'whowley7@cargocollective.com',
+  },
+  {
+    id: 9,
+    firstName: 'Mitchel',
+    lastName: 'Ginnelly',
+    email: 'mginnelly8@sakura.ne.jp',
+  },
+  {
+    id: 10,
+    firstName: 'Adi',
+    lastName: 'Swarbrick',
+    email: 'aswarbrick9@home.pl',
+  },
+]

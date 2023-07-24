@@ -4,7 +4,18 @@ import { FormControl, FormLabel, Autocomplete as MUIAutocomplate, TextField } fr
 import { Controller } from 'react-hook-form'
 import { Spacing } from '../../../../../utils/thema/spacing'
 
-const SimpleAutocomplate = ({ name, control, options, errors, optionLabel, getValueBy, renderKey, label, size }) => {
+const SimpleAutocomplate = ({
+  name,
+  control,
+  options,
+  errors,
+  optionLabel,
+  getValueBy,
+  renderKey,
+  label,
+  placeholder,
+  size,
+}) => {
   return (
     <Controller
       name={name}
@@ -27,7 +38,12 @@ const SimpleAutocomplate = ({ name, control, options, errors, optionLabel, getVa
                 </li>
               )}
               renderInput={(props) => (
-                <TextField {...props} error={!!errors[name]} helperText={errors[name] && errors[name].message} />
+                <TextField
+                  {...props}
+                  placeholder={placeholder}
+                  error={!!errors[name]}
+                  helperText={errors[name] && errors[name].message}
+                />
               )}
               size={size}
             />
@@ -43,6 +59,7 @@ SimpleAutocomplate.defaultProps = {
   getValueBy: 'value',
   optionValue: 'label',
   renderKey: 'label',
+  placeholder:"Type something"
 }
 
 SimpleAutocomplate.propTypes = {
@@ -54,6 +71,7 @@ SimpleAutocomplate.propTypes = {
   size: PropTypes.string,
   optionLabel: PropTypes.string,
   getValueBy: PropTypes.string,
+  placeholder: PropTypes.string,
   renderKey: PropTypes.string.isRequired,
 }
 
