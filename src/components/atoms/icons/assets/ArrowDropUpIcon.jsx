@@ -6,9 +6,9 @@ const ArrowDropUpIcon = ({ color, size, sx }) => {
   return (
     <MUIArrowDropUpIcon
       fontSize={size}
+      color={color}
       sx={{
         minWidth: '18px !important',
-        color: color,
         ...sx,
         width: '100% !important',
       }}

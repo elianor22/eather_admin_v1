@@ -6,7 +6,7 @@ import IconPages from '../pages/Components/IconPages/IconPages'
 import { InputPages } from '../pages/Components/InputPages/InputPages'
 import ComponentPages from '../pages/Components'
 import Autocomplate from '../pages/Components/Autocomplete/Autocomplete'
-
+import TablePage from '../pages/Table/TablePage'
 // import TableViewIcon from '@mui/icons-material/TableView'
 
 export const routes = [
@@ -31,7 +31,7 @@ export const routes = [
   {
     key: 'tables',
     name: 'Tables Example',
-    element: <div>Table</div>,
+    element: <TablePage />,
     icon: 'table',
     path: 'table',
     layout: 'admin',

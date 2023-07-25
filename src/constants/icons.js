@@ -13,6 +13,7 @@ export const iconsVariants = [
   'favorite',
   'outline-favorite',
   'more',
+  'more-vertical',
   'component',
   'dropdown',
   'dropup',
@@ -24,4 +25,5 @@ export const iconsVariants = [
   'button',
   'icon',
   'select',
+  'eye',
 ]

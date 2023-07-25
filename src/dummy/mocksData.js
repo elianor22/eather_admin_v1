@@ -345,3 +345,66 @@ export const mockDataAutocomplate = [
   { label: '3 Idiots', year: 2009 },
   { label: 'Monty Python and the Holy Grail', year: 1975 },
 ]
+
+export const mockDataSimpleTable = [
+  {
+    id: 1,
+    name: 'Pate Staries',
+    email: 'pstaries0@360.cn',
+    phone: '926-501-3719',
+  },
+  {
+    id: 2,
+    name: 'Paloma Colwill',
+    email: 'pcolwill1@mozilla.org',
+    phone: '722-878-2147',
+  },
+  {
+    id: 3,
+    name: 'Kimmie Micklewicz',
+    email: 'kmicklewicz2@macromedia.com',
+    phone: '120-732-3070',
+  },
+  {
+    id: 4,
+    name: 'Scottie Christescu',
+    email: 'schristescu3@nbcnews.com',
+    phone: '110-554-6952',
+  },
+  {
+    id: 5,
+    name: 'Lucius Heijnen',
+    email: 'lheijnen4@webs.com',
+    phone: '196-282-4510',
+  },
+  {
+    id: 6,
+    name: 'Gill Bremond',
+    email: 'gbremond5@omniture.com',
+    phone: '129-404-4720',
+  },
+  {
+    id: 7,
+    name: 'Brew Zanussii',
+    email: 'bzanussii6@yale.edu',
+    phone: '713-230-0869',
+  },
+  {
+    id: 8,
+    name: 'Atlanta Zamboniari',
+    email: 'azamboniari7@blogtalkradio.com',
+    phone: '593-703-9610',
+  },
+  {
+    id: 9,
+    name: 'Cathee Culham',
+    email: 'cculham8@soundcloud.com',
+    phone: '270-866-0988',
+  },
+  {
+    id: 10,
+    name: 'Evanne Terlinden',
+    email: 'eterlinden9@illinois.edu',
+    phone: '580-485-1476',
+  },
+]

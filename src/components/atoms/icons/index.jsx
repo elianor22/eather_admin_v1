@@ -25,6 +25,8 @@ import TypographyIcon from './assets/TypographyIcon'
 import ButtonIcon from './assets/ButtonIcon'
 import IconsIcon from './assets/IconsIcon'
 import SelectIcon from './assets/SelectIcon'
+import MoreVerticalIcon from './assets/MoreVerticalIcon'
+import EyeIcon from './assets/EyeIcon'
 
 const components = {
   dashboard: DashboardIcon,
@@ -40,6 +42,7 @@ const components = {
   favorite: FavoriteIcon,
   'outline-favorite': OutlineFavIcon,
   more: MoreHorizontalIcon,
+  'more-vertical': MoreVerticalIcon,
   component: ComponentIcon,
   dropdown: ArrowDropDownIcon,
   dropup: ArrowDropUpIcon,
@@ -51,6 +54,7 @@ const components = {
   button: ButtonIcon,
   icon: IconsIcon,
   select: SelectIcon,
+  eye: EyeIcon,
 }
 
 const Icon = ({ variant, color, size, sx }) => {

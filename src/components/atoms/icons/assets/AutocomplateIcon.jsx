@@ -1,5 +1,4 @@
 import React from 'react'
-
 import PropTypes from 'prop-types'
 import { SvgIcon } from '@mui/material'
 
@@ -7,9 +6,11 @@ const AutocomplateIcon = ({ color, size, sx }) => {
   return (
     <SvgIcon
       fontSize={size}
+      color={color}
       viewBox="0 0 24 24"
       sx={{
         fill: 'none',
+        stroke: ({ palette }) => palette[color][palette.mode],
         ...sx,
       }}
     >
@@ -19,7 +20,7 @@ const AutocomplateIcon = ({ color, size, sx }) => {
       />
       <path
         d="M15 2V22M22 12C22 15.771 22 17.657 20.828 18.828C19.765 19.892 18.114 19.99 15 20M12 4H10C6.229 4 4.343 4 3.172 5.172C2 6.343 2 8.229 2 12C2 15.771 2 17.657 3.172 18.828C4.343 20 6.229 20 10 20H12M15 4C18.114 4.01 19.765 4.108 20.828 5.172C21.482 5.825 21.771 6.7 21.898 8"
-        stroke={color}
+        stroke={'inherit'}
         strokeWidth="1.5"
         strokeLinecap="round"
       />
@@ -28,7 +29,7 @@ const AutocomplateIcon = ({ color, size, sx }) => {
 }
 
 AutocomplateIcon.defaultProps = {
-  color: 'black',
+  color: 'primary',
 }
 
 AutocomplateIcon.propTypes = {

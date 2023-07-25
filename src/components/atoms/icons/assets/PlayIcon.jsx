@@ -6,9 +6,10 @@ const PlayIcon = ({ color, size, sx }) => {
   return (
     <PlayArrowIcon
       fontSize={size}
+      color={color}
       sx={{
         minWidth: '18px !important',
-        color: color,
+        // color: color,
         ...sx,
         width: '100% !important',
       }}
