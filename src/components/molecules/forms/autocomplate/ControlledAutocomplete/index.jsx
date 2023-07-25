@@ -21,15 +21,17 @@ const ControlledAutocomplete = ({
   label,
   size,
   placeholder,
+  multiple,
   sx,
   sxFC,
   sxFL,
+  ...props
 }) => {
   return (
     <Controller
       name={name}
       control={control}
-      defaultValue={null}
+      defaultValue={multiple ? [] : null}
       render={({ field }) => (
         <FormControl
           fullWidth
@@ -41,6 +43,7 @@ const ControlledAutocomplete = ({
           <FormLabel
             htmlFor={name}
             sx={{
+              mb: Spacing['xxs'],
               ...sxFL,
             }}
           >
@@ -50,6 +53,7 @@ const ControlledAutocomplete = ({
           <Autocomplete
             {...field}
             id={name}
+            multiple={multiple}
             options={options}
             value={value || field.value}
             onChange={(_, val) => {
@@ -98,6 +102,7 @@ const ControlledAutocomplete = ({
             sx={{
               ...sx,
             }}
+            {...props}
           />
         </FormControl>
       )}
@@ -108,6 +113,7 @@ const ControlledAutocomplete = ({
 ControlledAutocomplete.defaultProps = {
   size: 'small',
   placeholder: 'Search something...',
+  multiple: false,
 }
 
 ControlledAutocomplete.propTypes = {
