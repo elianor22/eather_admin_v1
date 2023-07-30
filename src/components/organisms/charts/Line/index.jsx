@@ -28,11 +28,11 @@ const ChartLine = ({ data, title, titleSize, colorSchema = 'category10' }) => {
           pointLabelYOffset={-12}
           useMesh={true}
           theme={{
-            tooltip:{
-                container:{
-                    color:'gray'
-                }  
-            }
+            tooltip: {
+              container: {
+                color: 'gray',
+              },
+            },
           }}
         />
       )}

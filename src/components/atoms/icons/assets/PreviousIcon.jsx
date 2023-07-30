@@ -1,5 +1,5 @@
 import React from 'react'
-import SkipPreviousIcon from '@mui/icons-material/SkipPrevious';
+import SkipPreviousIcon from '@mui/icons-material/SkipPrevious'
 import PropTypes from 'prop-types'
 
 const PreviousIcon = ({ color, size, sx }) => {

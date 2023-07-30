@@ -5,7 +5,6 @@ import VisibilityIcon from '@mui/icons-material/Visibility'
 import VisibilityOffIcon from '@mui/icons-material/VisibilityOff'
 import { inputSizes } from '../../../../../constants/input'
 
-
 const InputPassword = ({ name, label, value, onCHange, size, sx }) => {
   const [visible, setVisible] = React.useState(false)
   return (

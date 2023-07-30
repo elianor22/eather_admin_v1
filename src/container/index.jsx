@@ -28,7 +28,7 @@ const AppContainer = () => {
       if (layout === 'admin') {
         if (children) {
           return (
-            <Route key={key} path={path} >
+            <Route key={key} path={path}>
               <Route index element={Component} />
               {children.map((child) => (
                 <Route key={child.path} path={child.path} element={child.element} />

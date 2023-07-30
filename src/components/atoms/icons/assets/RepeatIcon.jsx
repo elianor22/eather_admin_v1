@@ -1,5 +1,5 @@
 import React from 'react'
-import {default as MUIRepeatIcon} from '@mui/icons-material/Repeat';
+import { default as MUIRepeatIcon } from '@mui/icons-material/Repeat'
 import PropTypes from 'prop-types'
 
 const RepeatIcon = ({ color, size, sx }) => {

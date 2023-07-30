@@ -1,25 +1,27 @@
+import { default as MUIEditIcon } from '@mui/icons-material/Edit'
 import React from 'react'
-import { default as MUIShuffleIcon } from '@mui/icons-material/Shuffle'
 import PropTypes from 'prop-types'
 
-const ShuffleIcon = ({ color, size, sx }) => {
+const EditIcon = ({ color, size, sx }) => {
   return (
-    <MUIShuffleIcon
+    <MUIEditIcon
       fontSize={size}
+      color={color}
       sx={{
         minWidth: '18px !important',
-        color: color,
         ...sx,
         width: '100% !important',
       }}
     />
   )
 }
-
-ShuffleIcon.propTypes = {
+EditIcon.defaultProps = {
+  color: 'info',
+}
+EditIcon.propTypes = {
   color: PropTypes.string,
   size: PropTypes.string,
   sx: PropTypes.object,
 }
 
-export default ShuffleIcon
+export default EditIcon

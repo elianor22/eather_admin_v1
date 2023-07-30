@@ -2,7 +2,6 @@ import { default as MUICircleIcon } from '@mui/icons-material/Circle'
 import React from 'react'
 import PropTypes from 'prop-types'
 
-// eslint-disable-next-line no-unused-vars
 const CircleIcon = ({ color, size, sx }) => {
   return (
     <MUICircleIcon

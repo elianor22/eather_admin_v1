@@ -3,26 +3,33 @@ import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import { TableContainer, Table as MUITable, TableHead, TableRow, TableCell, TableBody, Box } from '@mui/material'
 import TableMenu from './TableMenu'
+import { typesTable } from '../../../../@types/table'
 
 const Table = ({ rows, columns, showHeader, align, buttonOptions, showButtonOption, buttonOptionTitle }) => {
   const [optionKey, setOptionKey] = useState(0)
   const [option, setOption] = useState('')
   const [openOptionMenu, setOPtionMenu] = useState(false)
-  const keys = Object.keys(buttonOptions)
-  const optionsMenu = keys.map((key) => ({
-    title: key,
-    color: buttonOptions[key].color ?? 'primary',
-    icon: buttonOptions[key].icon,
-    onClick: () => buttonOptions[key]?.onClick(option),
-  }))
+  const keys = buttonOptions && Object.keys(buttonOptions)
+  const optionsMenu =
+    keys &&
+    keys.map((key) => ({
+      title: key,
+      color: buttonOptions[key].color ?? 'primary',
+      icon: buttonOptions[key].icon,
+      onClick: () => buttonOptions[key]?.onClick(option),
+    }))
 
   return (
     <TableContainer>
       <MUITable>
         {showHeader && (
-          <TableHead>
+          <TableHead
+            sx={{
+              whiteSpace: 'nowrap',
+            }}
+          >
             <TableRow>
-              {rows.map((row) => (
+              {columns.map((row) => (
                 <TableCell
                   key={row.key}
                   align={align}
@@ -33,22 +40,28 @@ const Table = ({ rows, columns, showHeader, align, buttonOptions, showButtonOpti
                   {row.title}
                 </TableCell>
               ))}
-              <TableCell
-                align={align}
-                sx={{
-                  fontWeight: '700',
-                }}
-              >
-                {buttonOptionTitle}
-              </TableCell>
+              {showButtonOption && (
+                <TableCell
+                  align={align}
+                  sx={{
+                    fontWeight: '700',
+                  }}
+                >
+                  {buttonOptionTitle}
+                </TableCell>
+              )}
             </TableRow>
           </TableHead>
         )}
-        <TableBody>
-          {columns.map((col, idx) => (
-            <TableRow key={col.id}>
-              {rows.map((row, idx) => (
-                <TableCell key={idx} align={align}>
+        <TableBody
+          sx={{
+            whiteSpace: 'nowrap',
+          }}
+        >
+          {rows.map((col, idx) => (
+            <TableRow key={col.id + idx}>
+              {columns.map((row, idx) => (
+                <TableCell key={`${row}${idx}`} align={align}>
                   {col[row.key]}
                 </TableCell>
               ))}
@@ -74,19 +87,7 @@ Table.defaultProps = {
   buttonOptionTitle: 'Options',
 }
 Table.propTypes = {
-  columns: PropTypes.array.isRequired,
-  align: PropTypes.string,
-  showHeader: PropTypes.bool,
-  buttonOptions: PropTypes.shape({
-    view: PropTypes.shape({
-      title: PropTypes.string.isRequired,
-      icon: PropTypes.string,
-      color: PropTypes.string,
-      onClick: PropTypes.func,
-    }),
-  }),
-  showButtonOption: PropTypes.bool,
-  buttonOptionTitle: PropTypes.string,
+  ...typesTable,
 }
 
 export default Table

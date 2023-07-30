@@ -1,13 +1,28 @@
-import { Avatar, Box, Button, IconButton, Menu, MenuItem, useMediaQuery, useTheme } from '@mui/material'
-import React from 'react'
+import {
+  Avatar,
+  Box,
+  Button,
+  Divider,
+  Drawer,
+  IconButton,
+  Menu,
+  MenuItem,
+  useMediaQuery,
+  useTheme,
+} from '@mui/material'
+import React, { useState } from 'react'
 
 import MenuIcon from '@mui/icons-material/Menu'
 import { useAppDispatch, useAppSelector } from '../../../store'
 import { setExpanded, setIsOpenSidebar } from '../../../store/reducers/sidebar'
 import Typography from '../../atoms/Typography/Typography'
-import ThemaSwitch from '../../atoms/Switch/ThemaSwitch'
 import NotificationsIcon from '@mui/icons-material/Notifications'
 import { DotNotif, LogoWrapper, NavbarContent } from './elements'
+import SettingsIcon from '@mui/icons-material/Settings'
+import Icon from '../../atoms/icons'
+import LightModeIcon from '@mui/icons-material/LightMode'
+import NightlightIcon from '@mui/icons-material/Nightlight'
+import { toggleTheme } from '../../../store/reducers/themeReducer'
 
 const settings = ['Profile', 'Account', 'Dashboard', 'Logout']
 
@@ -18,6 +33,7 @@ const Navbar = () => {
   const [anchorElUser, setAnchorElUser] = React.useState(null)
   const theme = useTheme()
   const isMediumScreen = useMediaQuery(theme.breakpoints.down('md'))
+  const [openSetting, setOpenSetting] = useState(false)
 
   const handleOpenUserMenu = (event) => {
     setAnchorElUser(event.currentTarget)
@@ -25,6 +41,10 @@ const Navbar = () => {
 
   const handleCloseUserMenu = () => {
     setAnchorElUser(null)
+  }
+
+  function handleClickTheme() {
+    dispatch(toggleTheme())
   }
 
   return (
@@ -65,9 +85,6 @@ const Navbar = () => {
             justifyContent: 'flex-end',
           }}
         >
-          <Box mr={2} display={'flex'} alignItems={'center'}>
-            <ThemaSwitch />
-          </Box>
           <Box mr={1} position={'relative'}>
             <DotNotif>2</DotNotif>
             <IconButton>
@@ -111,8 +128,68 @@ const Navbar = () => {
               </Menu>
             )}
           </Box>
+          <Box ml={2}>
+            <IconButton onClick={() => setOpenSetting(!openSetting)}>
+              <SettingsIcon fontSize="small" />
+            </IconButton>
+          </Box>
         </Box>
       </NavbarContent>
+      <Drawer
+        open={openSetting}
+        onClose={() => setOpenSetting(false)}
+        anchor="right"
+        PaperProps={{
+          sx: {
+            backgroundColor: ({ palette }) => palette['background'].default,
+          },
+        }}
+      >
+        <Box minWidth={'250px'}>
+          <Box display={'flex'} justifyContent={'space-between'} py={'1rem'} alignItems={'center'} px={1}>
+            <Typography variant="h4">Settings</Typography>
+            <IconButton onClick={() => setOpenSetting(false)}>
+              <Icon variant={'close'} />
+            </IconButton>
+          </Box>
+          <Divider />
+          <Box py={'1rem'} px={1}>
+            <Typography variant="body1">Theme Mode</Typography>
+
+            <Box
+              display={'flex'}
+              sx={{
+                border: ({ palette }) => `1px solid ${palette.primary[palette.mode]}`,
+                borderRadius: '8px',
+                overflow: 'hidden',
+              }}
+            >
+              <Button
+                onClick={handleClickTheme}
+                fullWidth
+                sx={{
+                  alignItems: 'center',
+                  backgroundColor: ({ palette }) => (palette.mode === 'light' ? 'rgba(0,0,0,.1)' : null),
+                }}
+              >
+                <LightModeIcon fontSize="small" />
+                <Typography ml={1}>Light </Typography>
+              </Button>
+              <Button
+                onClick={handleClickTheme}
+                fullWidth
+                sx={{
+                  alignItems: 'center',
+                  backgroundColor: ({ palette }) => (palette.mode === 'light' ? null : 'rgba(255,255,255,0.3)'),
+                }}
+              >
+                <NightlightIcon fontSize="small" />
+                <Typography ml={1}>Dark </Typography>
+              </Button>
+            </Box>
+          </Box>
+        </Box>
+      </Drawer>
     </Box>
   )
 }

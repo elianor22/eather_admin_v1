@@ -1,4 +1,4 @@
-import {default as MUICloseIcon} from '@mui/icons-material/Close'
+import { default as MUICloseIcon } from '@mui/icons-material/Close'
 import React from 'react'
 import PropTypes from 'prop-types'
 

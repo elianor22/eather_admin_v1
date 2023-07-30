@@ -11,6 +11,7 @@
     "@hookform/resolvers": "^3.1.1",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.5",
+    "@mui/x-data-grid": "^6.10.2",
     "@nivo/bar": "^0.83.0",
     "@nivo/core": "^0.83.0",
     "@nivo/line": "^0.83.0",
@@ -38,7 +39,7 @@
     "lint": "eslint src/",
     "lint:fix": "yarn lint --fix",
     "prettier": "prettier src --check",
-    "prettier:fix": "yarn prettier --write"
+    "prettier:fix": "yarn run prettier --write"
   },
   "eslintConfig": {
     "extends": [
@@ -63,6 +64,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@mui/x-data-grid-generator": "^6.10.2",
     "@typescript-eslint/eslint-plugin": "^6.1.0",
     "eslint-plugin-prettier": "4.2.1",
     "eslint-plugin-react": "^7.33.0",

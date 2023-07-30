@@ -6,13 +6,13 @@ export const ImageWrapper = styled(Box)(() => ({
   flexDirection: 'column',
   position: 'static',
   width: '100%',
-  borderRadius:'4px',
+  borderRadius: '4px',
   overflow: 'hidden',
 
   '& img': {
     width: '100%',
     // height: '100%',
     objectFit: 'cover',
-    objectPosition:'center center'
+    objectPosition: 'center center',
   },
 }))

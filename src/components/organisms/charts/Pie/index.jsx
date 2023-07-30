@@ -22,11 +22,11 @@ const ChartPie = ({ data, title, titleSize, colorSchema = 'category10' }) => {
           enableSliceLabels={true}
           enableArcLinkLabels={false}
           theme={{
-            tooltip:{
-                container:{
-                    color:'gray'
-                }  
-            }
+            tooltip: {
+              container: {
+                color: 'gray',
+              },
+            },
           }}
           legends={[
             {

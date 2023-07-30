@@ -9,7 +9,7 @@ const TableIcon = ({ color, size, sx }) => {
       sx={{
         minWidth: '2px',
         color: color,
-        width:'100%',
+        width: '100%',
         ...sx,
       }}
     />

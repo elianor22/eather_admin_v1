@@ -1,5 +1,5 @@
 import React from 'react'
-import PlayArrowIcon from '@mui/icons-material/PlayArrow';
+import PlayArrowIcon from '@mui/icons-material/PlayArrow'
 import PropTypes from 'prop-types'
 
 const PlayIcon = ({ color, size, sx }) => {

@@ -349,7 +349,7 @@ export const mockDataAutocomplate = [
 export const mockDataSimpleTable = [
   {
     id: 1,
-    name: 'Pate Staries',
+    name: 'Pate Staries serius amatbro',
     email: 'pstaries0@360.cn',
     phone: '926-501-3719',
   },

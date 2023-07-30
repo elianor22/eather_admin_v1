@@ -1,5 +1,5 @@
 import React from 'react'
-import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder';
+import FavoriteBorderIcon from '@mui/icons-material/FavoriteBorder'
 import PropTypes from 'prop-types'
 
 const OutlineFavIcon = ({ color, size, sx }) => {

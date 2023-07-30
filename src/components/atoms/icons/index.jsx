@@ -27,6 +27,8 @@ import IconsIcon from './assets/IconsIcon'
 import SelectIcon from './assets/SelectIcon'
 import MoreVerticalIcon from './assets/MoreVerticalIcon'
 import EyeIcon from './assets/EyeIcon'
+import EditIcon from './assets/EditIcon'
+import DeleteIcon from './assets/DeleteIcon'
 
 const components = {
   dashboard: DashboardIcon,
@@ -55,6 +57,8 @@ const components = {
   icon: IconsIcon,
   select: SelectIcon,
   eye: EyeIcon,
+  edit: EditIcon,
+  delete: DeleteIcon,
 }
 
 const Icon = ({ variant, color, size, sx }) => {

@@ -59,7 +59,7 @@ SimpleAutocomplate.defaultProps = {
   getValueBy: 'value',
   optionValue: 'label',
   renderKey: 'label',
-  placeholder:"Type something"
+  placeholder: 'Type something',
 }
 
 SimpleAutocomplate.propTypes = {

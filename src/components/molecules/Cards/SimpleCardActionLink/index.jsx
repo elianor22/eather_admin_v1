@@ -4,16 +4,7 @@ import BaseCard from '../BaseCard'
 import { Box, CardActions, Link } from '@mui/material'
 import { typoTypes } from '../../../atoms/Typography/Typography'
 
-const CardWithAction = ({
-  title,
-  variant,
-  children,
-  actionLabel,
-  // eslint-disable-next-line no-unused-vars
-  href,
-  sx,
-  sxContent,
-}) => {
+const CardWithAction = ({ title, variant, children, actionLabel, href, sx, sxContent }) => {
   return (
     <BaseCard title={title} variant={variant} sx={{ ...sx }} sxContent={{ ...sxContent }}>
       <Box width={'100%'}>{children}</Box>

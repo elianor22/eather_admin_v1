@@ -11,7 +11,7 @@ const OptionsMenu = ({ data, sx }) => {
       {data.map((list, idx) => (
         <MenuItem key={idx} onClick={list.onClick} color={list.color}>
           <Box>{list.icon && <Icon variant={list.icon} size={'small'} />}</Box>
-         <Typography color={'inherit'}>{list.menu}</Typography>
+          <Typography color={'inherit'}>{list.menu}</Typography>
         </MenuItem>
       ))}
     </List>

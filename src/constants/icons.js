@@ -26,4 +26,6 @@ export const iconsVariants = [
   'icon',
   'select',
   'eye',
+  'edit',
+  'delete',
 ]

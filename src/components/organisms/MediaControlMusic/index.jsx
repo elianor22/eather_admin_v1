@@ -22,12 +22,7 @@ export default function MediaControlMusic({ cover }) {
         boxShadow: ' 0px 0px 20px 0px rgba(0, 0, 0, 0.05)',
       }}
     >
-      <CardMedia
-        component="img"
-        sx={{ width: 151 }}
-        image={cover}
-        alt="Live from space album cover"
-      />
+      <CardMedia component="img" sx={{ width: 151 }} image={cover} alt="Live from space album cover" />
       <Box sx={{ display: 'flex', flexDirection: 'column', width: '100%' }}>
         <CardContent sx={{ flex: '1  auto' }} width="100%">
           <Typography fontSize="14px" variant="body1" color={'#E7EAF4'}>
@@ -38,12 +33,7 @@ export default function MediaControlMusic({ cover }) {
           </Typography>
         </CardContent>
         <Box px={'10px'}>
-          <Slider
-            defaultValue={50}
-            aria-label="music-slider"
-            valueLabelDisplay="auto"
-            size="small"
-          />
+          <Slider defaultValue={50} aria-label="music-slider" valueLabelDisplay="auto" size="small" />
         </Box>
         <Box sx={{ display: 'flex', alignItems: 'center', pl: 1, pb: 1, justifyContent: 'center' }}>
           <IconButton aria-label="shuffle" color="#B0B0B0" onClick={() => setIsShuffle(!isShuffle)}>

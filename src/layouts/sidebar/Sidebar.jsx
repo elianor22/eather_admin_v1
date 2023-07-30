@@ -20,8 +20,7 @@ const Sidebar = () => {
   const sidebar = useAppSelector((state) => state.sidebar)
   const [open, setOpen] = useState(true)
 
-  // eslint-disable-next-line no-unused-vars
-  const handleClick = (idx, item) => {
+  const handleClick = (idx) => {
     if (open === idx) {
       setOpen((prev) => !prev)
     }
@@ -125,21 +124,23 @@ const Sidebar = () => {
                       <Box>
                         {open === idx || item.path === getLastSelected ? (
                           <Icon
-                            variant="dropdown"
-                            color={
-                              selectedItem === idx || item.path === getLastSelected
-                                ? ColorProps.sidebar.active
-                                : 'unset'
-                            }
+                            variant="dropup"
+                            sx={{
+                              color:
+                                selectedItem === idx || item.path === getLastSelected
+                                  ? ColorProps.sidebar.active
+                                  : 'inherit',
+                            }}
                           />
                         ) : (
                           <Icon
-                            variant="dropup"
-                            color={
-                              selectedItem === idx || item.path === getLastSelected
-                                ? ColorProps.sidebar.active
-                                : 'unset'
-                            }
+                            variant="dropdown"
+                            sx={{
+                              color:
+                                selectedItem === idx || item.path === getLastSelected
+                                  ? ColorProps.sidebar.active
+                                  : 'unset',
+                            }}
                           />
                         )}
                       </Box>
@@ -373,7 +374,6 @@ const Sidebar = () => {
                               }),
                         },
                         '&:hover': {
-                          // backgroundColor: `${ColorProps.sidebar.hover} `,
                           '&.MuiTypography-root': {
                             color: ColorProps['typo.1'][mode],
                           },
@@ -422,7 +422,10 @@ const Sidebar = () => {
                       </Box>
                     </ListItemButton>
 
-                    <Collapse in={open === idx || item.path === `${pathWithoutLastPart}${item.path}`} timeout={'auto'}>
+                    <Collapse
+                      in={open === idx || `${item.layout}/${item.path}` === `${pathWithoutLastPart}${item.path}`}
+                      timeout={'auto'}
+                    >
                       <List
                         sx={{
                           padding: '0 16px 0px 42px',
@@ -496,10 +499,6 @@ const Sidebar = () => {
                   >
                     <ListItemButton
                       key={idx}
-                      className=""
-                      // onClick={() => {
-                      //   handleClick(idx, item)
-                      // }}
                       sx={{
                         padding: sidebar.isExpand ? '12px 16px' : '12px 0px',
                         backgroundColor: selectedItem === idx ? '#EFEAFF' : 'unset',

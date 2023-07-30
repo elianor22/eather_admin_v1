@@ -1,36 +1,36 @@
 {
-    "data": [
-        {
-            "id": "d1",
-            "title": "Revenue",
-            "value": "Rp 2.000.000",
-            "percentage": "2.5%",
-            "indicator": "plus",
-            "image": "/assets/images/dashboards/wave-revenue.svg"
-        },
-        {
-            "id": "d2",
-            "title": "Sales",
-            "value": "1,429",
-            "percentage": null,
-            "indicator": null,
-            "image": "/assets/images/dashboards/wave-sales.svg"
-        },
-        {
-            "id": "d3",
-            "title": "Views",
-            "value": "190.000",
-            "percentage": "2%",
-            "indicator": "minus",
-            "image": "/assets/images/dashboards/wave-views.svg"
-        },
-        {
-            "id": "d4",
-            "title": "Liked",
-            "value": "19.000",
-            "percentage": "2%",
-            "indicator": "plus",
-            "image": "/assets/images/dashboards/wave-liked.svg"
-        }
-    ]
+  "data": [
+    {
+      "id": "d1",
+      "title": "Revenue",
+      "value": "Rp 2.000.000",
+      "percentage": "2.5%",
+      "indicator": "plus",
+      "image": "/assets/images/dashboards/wave-revenue.svg"
+    },
+    {
+      "id": "d2",
+      "title": "Sales",
+      "value": "1,429",
+      "percentage": null,
+      "indicator": null,
+      "image": "/assets/images/dashboards/wave-sales.svg"
+    },
+    {
+      "id": "d3",
+      "title": "Views",
+      "value": "190.000",
+      "percentage": "2%",
+      "indicator": "minus",
+      "image": "/assets/images/dashboards/wave-views.svg"
+    },
+    {
+      "id": "d4",
+      "title": "Liked",
+      "value": "19.000",
+      "percentage": "2%",
+      "indicator": "plus",
+      "image": "/assets/images/dashboards/wave-liked.svg"
+    }
+  ]
 }
