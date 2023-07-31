@@ -34,7 +34,7 @@ const TablePage = () => {
             },
             edit: {
               title: 'Edit',
-              color: 'secondary',
+              color: 'primary',
               onClick: (v) => console.log('from pages table', v),
             },
             delete: {
