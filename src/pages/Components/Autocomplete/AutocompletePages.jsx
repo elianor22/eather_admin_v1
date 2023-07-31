@@ -1,5 +1,5 @@
 /* eslint-disable react/no-unescaped-entities */
-import { Box, Table, TableBody, TableCell, TableHead, TableRow } from '@mui/material'
+import { Box } from '@mui/material'
 import React from 'react'
 import { useForm } from 'react-hook-form'
 import { mockDataAutocomplate } from '../../../dummy/mocksData'
@@ -35,47 +35,6 @@ const AutocomplatePages = () => {
             getValueBy={'label'}
             label="Simple Autocomplete"
           />
-          <Typography
-            sx={{
-              mt: 1,
-            }}
-          >
-            Props Optionals
-          </Typography>
-          <Table
-            sx={{
-              my: 2,
-            }}
-          >
-            <TableHead>
-              <TableRow>
-                <TableCell>Name</TableCell>
-                <TableCell>Type</TableCell>
-                <TableCell>Description</TableCell>
-              </TableRow>
-            </TableHead>
-            <TableBody>
-              <TableRow>
-                <TableCell>optionLabel</TableCell>
-                <TableCell>string</TableCell>
-                <TableCell>
-                  optionLabel for rendering and get label by optionLabel. example "label" but if object you can use like
-                  this "category.name". Optional props
-                </TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>getValueBy</TableCell>
-                <TableCell>string</TableCell>
-                <TableCell>returning value by getValueBy</TableCell>
-              </TableRow>
-              <TableRow>
-                <TableCell>renderKey</TableCell>
-                <TableCell>string</TableCell>
-                <TableCell>unique key for each list</TableCell>
-              </TableRow>
-            </TableBody>
-          </Table>
-          <Typography>But also support all props from Mui Autocomplate</Typography>
         </Box>
       </BaseCard>
       <BaseCard

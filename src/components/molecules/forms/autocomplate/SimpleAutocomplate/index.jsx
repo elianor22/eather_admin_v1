@@ -4,18 +4,7 @@ import { FormControl, FormLabel, Autocomplete as MUIAutocomplate, TextField } fr
 import { Controller } from 'react-hook-form'
 import { Spacing } from '../../../../../utils/thema/spacing'
 
-const SimpleAutocomplate = ({
-  name,
-  control,
-  options,
-  errors,
-  optionLabel,
-  getValueBy,
-  renderKey,
-  label,
-  placeholder,
-  size,
-}) => {
+const SimpleAutocomplate = ({ name, control, options, errors, getValueBy, renderKey, label, placeholder, size }) => {
   return (
     <Controller
       name={name}
@@ -30,11 +19,11 @@ const SimpleAutocomplate = ({
               id={name}
               options={options}
               isOptionEqualToValue={(o, v) => o[getValueBy] === v[getValueBy]}
-              getOptionLabel={(option) => option[optionLabel]}
+              getOptionLabel={(option) => option.label}
               onChange={(_, v) => field.onChange(v)}
               renderOption={(props, options) => (
                 <li key={options[renderKey]} {...props}>
-                  {options[optionLabel]}
+                  {options.label}
                 </li>
               )}
               renderInput={(props) => (
@@ -55,7 +44,6 @@ const SimpleAutocomplate = ({
 }
 SimpleAutocomplate.defaultProps = {
   size: 'small',
-  optionLabel: 'label',
   getValueBy: 'value',
   optionValue: 'label',
   renderKey: 'label',
@@ -69,7 +57,6 @@ SimpleAutocomplate.propTypes = {
   errors: PropTypes.any.isRequired,
   label: PropTypes.string,
   size: PropTypes.string,
-  optionLabel: PropTypes.string,
   getValueBy: PropTypes.string,
   placeholder: PropTypes.string,
   renderKey: PropTypes.string.isRequired,

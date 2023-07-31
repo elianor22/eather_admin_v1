@@ -4,7 +4,6 @@ import { CardHeadImageDescContent, CardHeadImageLink, CardWrapper } from './elem
 import Typography from '../../atoms/Typography/Typography'
 import { Box, Divider } from '@mui/material'
 
-// eslint-disable-next-line no-unused-vars
 const CardHeadlineImage = ({ title, image, headline }) => {
   return (
     <CardWrapper

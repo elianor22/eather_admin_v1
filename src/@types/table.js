@@ -46,4 +46,5 @@ export const typeTableDataGrid = {
   pageSize: PropTypes.number,
   onChangePage: PropTypes.func,
   perPageOptions: PropTypes.arrayOf(PropTypes.number),
+  showToolbar: PropTypes.bool,
 }

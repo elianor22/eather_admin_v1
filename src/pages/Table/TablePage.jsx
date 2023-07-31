@@ -76,6 +76,7 @@ const TablePage = () => {
             pageSize={10}
             perPageOptions={[10, 25, 50, 100]}
             onPaginationModelChange={console.log}
+            showToolbar={true}
           />
         </BaseCard>
       </Box>

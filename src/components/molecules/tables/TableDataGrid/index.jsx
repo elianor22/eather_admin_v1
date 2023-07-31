@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React from 'react'
-import { DataGrid } from '@mui/x-data-grid'
+import { DataGrid, GridToolbar } from '@mui/x-data-grid'
 import { typeTableDataGrid } from '../../../../@types/table'
 import CustomeTablePagination from '../CustomeTablePagination'
-import { LinearProgress } from '@mui/material'
+import { Box, LinearProgress } from '@mui/material'
 import { GridPagination } from '@mui/x-data-grid'
 import { ColorProps } from '../../../../utils/thema/colors'
 
@@ -11,7 +11,14 @@ function CustomPagination(props) {
   return <GridPagination ActionsComponent={CustomeTablePagination} {...props} />
 }
 
-const TableDataGrid = ({ columns, rows, pageSize, onChangePage, perPageOptions }) => {
+const TableDataGrid = ({ columns, rows, pageSize, onChangePage, perPageOptions, showToolbar, sx }) => {
+  function renderToolbar() {
+    return (
+      <Box display={'flex'} justifyContent={'flex-end'}>
+        <GridToolbar />
+      </Box>
+    )
+  }
   return (
     <DataGrid
       columns={columns}
@@ -28,9 +35,11 @@ const TableDataGrid = ({ columns, rows, pageSize, onChangePage, perPageOptions }
       slots={{
         pagination: CustomPagination,
         loadingOverlay: LinearProgress,
+        toolbar: showToolbar && renderToolbar,
       }}
       sx={{
         backgroundColor: ({ palette }) => ColorProps['card'][palette.mode],
+        ...sx,
       }}
     />
   )
