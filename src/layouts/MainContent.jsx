@@ -62,7 +62,7 @@ const MainContent = ({ children }) => {
 
   return (
     <MainWrapper pl={sidebarOption}>
-      <Container width={'100%'} p={'20px'}>
+      <Container p={'20px'}>
         <Stack>
           <Breadrumb breadcrumbs={breadcrumbs} />
         </Stack>
